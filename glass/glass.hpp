@@ -27,7 +27,7 @@ namespace detail
 template <typename T, std::size_t N>
 struct Key
 {
-    // Declare at instantiation
+    // Declare at instantiation, return type is unknown at this point, required for ADL
     friend auto lookup(Key<T, N>);
 };
 
@@ -51,6 +51,7 @@ struct CvtToAny
 template <typename T, std::size_t... I, typename U>
 constexpr std::size_t member_count_impl(U) noexcept
 {
+    // We know that with N args, the type constructor fails but N - 1 worked.
     return sizeof...(I) - 1;
 }
 
@@ -58,6 +59,7 @@ constexpr std::size_t member_count_impl(U) noexcept
 template <typename T, std::size_t... I>
 constexpr auto member_count_impl(int) -> decltype(T{CvtToAny<T, I>{}...}, 0)
 {
+    // Recurse until SFINAE picks the other overload, passing another larger index each time
     return member_count_impl<T, I..., sizeof...(I)>(0);
 }
 
