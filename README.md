@@ -3,7 +3,7 @@
 `constexpr` utilities to determine the number of member fields in an aggregate `struct`, and produce a `std::tuple` with the same list of types.
 
 <p align="center">
-<img src="https://github.com/nitronoid/looking-glass/.github/images/looking-glass.jpg" width="900">
+<img src="https://github.com/nitronoid/looking-glass/raw/main/.github/images/looking-glass.jpg" width="900">
 </p>
 
 ### Example usage
