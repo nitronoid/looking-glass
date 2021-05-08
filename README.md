@@ -33,8 +33,8 @@ I haven't traced back the minimum MSVC version yet, but it does work with v19.14
 ---
 The utility is header only, simply include `"glass.hpp"` to use.  
 There are a couple of customisation options for the header:
-* Define `REFLEX_NAMESPACE` if you want the utilities to live in a namespace other than `glass`.
-* Disable the compile-time unit tests by defining `REFLEX_DISABLE_TESTS`
+* Define `GLASS_NAMESPACE` if you want the utilities to live in a namespace other than `glass`.
+* Disable the compile-time unit tests by defining `GLASS_DISABLE_TESTS`
 
 ### Tests
 ---
